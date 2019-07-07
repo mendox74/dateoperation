@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8" />
+    <title>日付計算基準設定 - DATE_Operation</title>
+    <link rel="stylesheet" href="/css/bootstrap.css" />
+    <script src="/js/jquery.js"></script>
+    <script src="/js/bootstrap.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>日付計算基準設定</h1>
+      <form th:action="@{/criteria}" th:method="post" th:object="${daOpe}">
+        <div class="form-group" >
+          <label class="control-label">基準日付</label>
+          <input class="form-control" type="text" th:field="*{criteria}" />
+        </div>
+        <button class="btn btn-default" type="submit">計算</button>
+      </form>
+      
+      <table class="table">
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>計算式ID</th>
+            <th>計算式名称</th>
+            <th>計算式(年/月/日)</th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr th:each="dateOperation:${dateOperations}" th:object="${dateOperation}">
+            <td th:text="*{id}"></td>
+            <td th:text="*{operationId}"></td>
+            <td th:text="*{operationName}"></td>
+            <td th:text="*{operationYear}+'/'+*{operationMonth}+'/'+*{operationDay}"></td>
+            <td></td>
+        </tbody>
+      </table>
+      <div class="pull-right">
+        <a class="btn btn-link" href="/">一覧画面へ</a>
+      </div>
+    </div>
+  </body>
+</html>
