@@ -28,13 +28,13 @@ public interface DateOperationRepository {
 	/*
 	 * 新規登録
 	 */
-	@Insert("INSERT INTO date(operationId,operationName,operationYear,operationMonth,operationDay) VALUES(#{operationId},#{operationName},#{operationYear},#{operationMonth},#{operationDay})")
+	@Insert("INSERT INTO date(operationId,operationName,operationYear,operationMonth,operationDay,monthEnd) VALUES(#{operationId},#{operationName},#{operationYear},#{operationMonth},#{operationDay},#{monthEnd})")
 	void insert (DateOperation dateOperation);
 	
 	/*
 	 * 計算式更新
 	 */
-	@Update("UPDATE date SET operationId = #{operationId}, operationName = #{operationName}, operationYear = #{operationYear}, operationMonth = #{operationMonth}, operationDay = #{operationDay} WHERE id = #{id}")
+	@Update("UPDATE date SET operationId = #{operationId}, operationName = #{operationName}, operationYear = #{operationYear}, operationMonth = #{operationMonth}, operationDay = #{operationDay}, monthEnd = #{monthEnd} WHERE id = #{id}")
 	void updata (DateOperation dateOperation);
 	
 	/*

@@ -2,6 +2,7 @@ package prototype.domain;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 public class DateOperation {
 	
@@ -32,9 +33,12 @@ public class DateOperation {
      * 計算結果 */
     private String result;
     /*
-     * 基準日
-     */
+     * 基準日*/
+    @Size()
     private String criteria;
+    /*
+     * 月末日取得判定*/
+    private int monthEnd;
 
     public int getId() {
         return id;
@@ -83,6 +87,12 @@ public class DateOperation {
 	}
 	public void setCriteria(String criteria) {
 		this.criteria = criteria;
+	}
+	public int getMonthEnd() {
+		return monthEnd;
+	}
+	public void setMonthEnd(int monthEnd) {
+		this.monthEnd = monthEnd;
 	}
 	@Override
     public String toString() {

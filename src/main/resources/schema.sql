@@ -5,5 +5,6 @@ CREATE TABLE IF NOT EXISTS date (
   operationYear INT (3),
   operationMonth INT (3),
   operationDay INT (3),
-  result VARCHAR (8)
+  result VARCHAR (8),
+  monthEnd BOOLEAN
 );

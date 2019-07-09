@@ -15,7 +15,6 @@ import prototype.domain.DateOperation;
 public class DateOperationService {
 	
 	SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
-	SimpleDateFormat sdf2 = new SimpleDateFormat("yyyyMMdd");
 	List<DateOperation> results = new ArrayList<DateOperation>();
 	
 	/*
@@ -34,9 +33,12 @@ public class DateOperationService {
 	        }
 			cal.add(Calendar.YEAR,daOpe.getOperationYear());
 			cal.add(Calendar.MONTH,daOpe.getOperationMonth());
+			if (daOpe.getMonthEnd() == 1) {
+			cal.set(Calendar.DAY_OF_MONTH,cal.getActualMaximum(Calendar.DAY_OF_MONTH));
+			}
 			cal.add(Calendar.DAY_OF_MONTH,daOpe.getOperationDay());	
 			
-			daOpe.setResult(sdf2.format(cal.getTime()));
+			daOpe.setResult(sdf.format(cal.getTime()));
 			results.add(daOpe);
 		}
 		return results;

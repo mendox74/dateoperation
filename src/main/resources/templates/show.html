@@ -35,6 +35,10 @@
           <label>加減値（日）</label>
           <p th:text="*{operationDay}"></p>
         </div>
+        <div>
+          <label>月末日取得</label>
+          <p th:text="*{monthEnd eq 1}?'有':'無'"></p>
+        </div>
       </div>
       <div>
         <a class="btn btn-default" th:href="@{/{id}/edit(id=*{id})}">編集</a>
