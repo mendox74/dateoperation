@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8" />
+    <title>ログイン - DATE_Operation</title>
+    <link rel="stylesheet" href="/css/bootstrap.css" />
+    <script src="/js/jquery.js"></script>
+    <script src="/js/bootstrap.js"></script>
+  </head>
+  <body>
+     <div class="container">
+      <h1>日付計算</h1>
+      <h3>ログイン</h3>
+        <div class="h3 text-danger" th:if="${userDelete != null}" th:text=${userDelete}></div>
+        <div class="h3 text-danger" th:if="${param.error}">ログインに失敗しました。再度入力をお願いします</div>
+        <div class="h3 text-danger" th:if="${param.logout}">ログアウトしました！</div>
+      <form  class="form-group" th:action="@{/sign_in}" th:method="post" >
+          <label class="control-label">UserName</label>
+          <input class="form-control" type="text" name="username" />
+          <label class="control-label">Password</label>
+          <input class="form-control" type="password" name="password" />
+        <button class="btn btn-default" type="submit">ログイン</button>
+      </form>
+       <a class="btn btn-default" href="/newUser">新規登録</a>
+     </div>
+  </body>
+</html>

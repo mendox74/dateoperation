@@ -10,6 +10,14 @@
   <body>
     <div class="container">
       <h1>日付計算式一覧</h1>
+      <h4 th:if="${login != null}" th:text=${login}></h4>
+	  <h4 th:text="|${userName}さん|"></h4>
+	  <form th:action="@{/logout}" method="post">
+      	<input class="btn btn-default btn-xs" type="submit" value="ログアウト"/>
+      </form>
+	  <form th:action="@{/{userName}/delete(userName=${userName})}" th:method="delete">
+      	<input class="btn btn-default btn-xs" type="submit" value="アカウント削除" />
+      </form>
       <table class="table">
         <thead>
           <tr>
@@ -36,7 +44,7 @@
            	<td/>
            	<td>
            	  <form th:action="@{/{id}(id=*{id})}" th:method="delete">
-              <input class="btn btn-default btn-xs" type="submit" value="削除" />
+              	<input class="btn btn-default btn-xs" type="submit" value="削除" />
               </form>
            	</td>
             <td></td>

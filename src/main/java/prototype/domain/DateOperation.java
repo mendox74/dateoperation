@@ -37,7 +37,7 @@ public class DateOperation {
     @Size()
     private String criteria;
     /*
-     * 月末日取得判定*/
+    * 月末日取得判定*/
     private int monthEnd;
 
     public int getId() {

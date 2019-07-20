@@ -29,7 +29,6 @@ public class DateOperationService {
 			try{
 				cal.setTime(sdf.parse(criteria));
 			}catch(ParseException ex){
-				System.out.println("日付が正しくありません");
 	        }
 			cal.add(Calendar.YEAR,daOpe.getOperationYear());
 			cal.add(Calendar.MONTH,daOpe.getOperationMonth());

@@ -20,7 +20,7 @@ public interface DateOperationRepository {
 	List<DateOperation> findAll();
 	
 	/*
-	 *個別取得
+	 * 個別取得
 	 */
 	@Select("SELECT * FROM date WHERE id = #{id}")
 	DateOperation findOne(int id);

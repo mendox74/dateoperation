@@ -1,4 +1,4 @@
-package prototype.webmvcconfig;
+package prototype.config;
 
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
@@ -10,9 +10,9 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 
 @Configuration
-public class WebMvcConfig implements WebMvcConfigurer {
+public class MvcConfig implements WebMvcConfigurer {
 	
-    /**
+    /*
      * ValidationメッセージをUTF-8で設定できるようにする
      */
     @Override
@@ -37,5 +37,4 @@ public class WebMvcConfig implements WebMvcConfigurer {
         messageSource.setDefaultEncoding("UTF-8");
         return messageSource;
     }
-
 }
