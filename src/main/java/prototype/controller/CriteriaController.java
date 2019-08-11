@@ -1,5 +1,6 @@
 package prototype.controller;
 
+import java.text.ParseException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +16,7 @@ import prototype.repository.DateOperationRepository;
 import prototype.service.DateOperationService;
 
 @Controller
-@RequestMapping("/")
+@RequestMapping("/criteria")
 public class CriteriaController {
 
     @Autowired
@@ -25,7 +26,7 @@ public class CriteriaController {
     /*
      * 基準日設定画面の表示
      */
-    @GetMapping("criteria")
+    @GetMapping
     public String criteria(Model model) {
         List<DateOperation> dateOperations = dateOperationRepository.findAll();
         model.addAttribute("dateOperations", dateOperations);
@@ -36,11 +37,12 @@ public class CriteriaController {
     /*
      * 日付計算の結果
      */
-    @PostMapping("criteria")
-    public String result(@ModelAttribute DateOperation daOpe) {
+    @PostMapping
+    public String result(@ModelAttribute DateOperation daOpe) throws ParseException {
 		List<DateOperation> dateOperations = dateOperationRepository.findAll();
     	DateOperationService dateOperationService = new DateOperationService();
     	List<DateOperation> results = dateOperationService.calculate(daOpe.getCriteria(), dateOperations);
+    	
     	for(DateOperation result : results) {
     	dateOperationRepository.calulated(result);	
     	}

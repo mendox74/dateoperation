@@ -32,7 +32,9 @@ public class UserDetailsServiceImpl implements UserDetailsService{
         if (account == null) {
             throw new UsernameNotFoundException("Account" + userName + "was not found in the database");
         }
-        //権限のリスト
+        /*
+         * 権限のリスト
+         */
         List<GrantedAuthority> grantList = new ArrayList<GrantedAuthority>();
         GrantedAuthority authority = new SimpleGrantedAuthority("account.authority");
         grantList.add(authority);

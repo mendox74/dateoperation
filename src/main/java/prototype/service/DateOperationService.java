@@ -21,7 +21,7 @@ public class DateOperationService {
 	 * 日付演算ロジック
 	 */
 	@Transactional
-	public List<DateOperation> calculate(String criteria ,List<DateOperation> dateOperations) {
+	public List<DateOperation> calculate(String criteria ,List<DateOperation> dateOperations) throws ParseException {
 		
 		Calendar cal = Calendar.getInstance();
 
@@ -29,6 +29,7 @@ public class DateOperationService {
 			try{
 				cal.setTime(sdf.parse(criteria));
 			}catch(ParseException ex){
+				throw ex;
 	        }
 			cal.add(Calendar.YEAR,daOpe.getOperationYear());
 			cal.add(Calendar.MONTH,daOpe.getOperationMonth());

@@ -29,7 +29,9 @@ public class IndexController {
     */
     @GetMapping
     public String indexDateOperations(Model model) {
-      //ログインユーザの情報を取得
+      /*
+       * ログインユーザの情報を取得
+       */
       Authentication auth = SecurityContextHolder.getContext().getAuthentication();
       String userName = auth.getName();
       model.addAttribute("userName", userName);
@@ -44,7 +46,9 @@ public class IndexController {
      */
     @PostMapping("sign_in")
     public String sign_in(Model model) {
-       //ログインユーザの情報を取得
+       /*
+        * ログインユーザの情報を取得
+        */
        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
        String userName = auth.getName();
        model.addAttribute("userName", userName);

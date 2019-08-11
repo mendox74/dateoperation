@@ -1,19 +1,19 @@
 CREATE TABLE IF NOT EXISTS date (
-  id INT (5) PRIMARY KEY AUTO_INCREMENT,
-  operationId VARCHAR (10),
-  operationName VARCHAR (20),
-  operationYear INT (3),
-  operationMonth INT (3),
-  operationDay INT (3),
-  result VARCHAR (8),
-  monthEnd BOOLEAN
+  id INT (5)		 PRIMARY KEY AUTO_INCREMENT,
+  operationId		 VARCHAR (10),
+  operationName		 VARCHAR (10),
+  operationYear 	 INT (3),
+  operationMonth 	 INT (3),
+  operationDay 		 INT (3),
+  result			 VARCHAR (8),
+  monthEnd			 BOOLEAN
 );
 
 CREATE TABLE IF NOT EXISTS account (
-  id INT (5) PRIMARY KEY AUTO_INCREMENT,
-  userName VARCHAR (20),
-  password VARCHAR (20),
-  authority VARCHAR (5) DEFAULT 'USER'
+  id 			 INT (5) PRIMARY KEY AUTO_INCREMENT,
+  userName  	 VARCHAR (10),
+  password 		 VARCHAR (10),
+  authority		 VARCHAR (5) DEFAULT 'USER'
 );
 
 DROP TABLE IF EXISTS SPRING_SESSION_ATTRIBUTES;

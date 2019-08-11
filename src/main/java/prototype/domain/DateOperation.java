@@ -2,7 +2,6 @@ package prototype.domain;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
 
 public class DateOperation {
 	
@@ -34,7 +33,6 @@ public class DateOperation {
     private String result;
     /*
      * 基準日*/
-    @Size()
     private String criteria;
     /*
     * 月末日取得判定*/
