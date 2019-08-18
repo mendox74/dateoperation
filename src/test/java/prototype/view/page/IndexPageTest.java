@@ -24,7 +24,7 @@ public class IndexPageTest {
 	    /*
 	     * テスト前にログイン
 	     */
-        open("http://localhost:8080/login");
+        open("http://localhost:8090/login");
         $("input[name=username]").val("user");
         $("input[name=password]").val("password");
         $("button[type=submit]").click();
@@ -33,7 +33,7 @@ public class IndexPageTest {
 	
 	@Before
 	public void setup() {
-        open("http://localhost:8080/");
+        open("http://localhost:8090/");
 		
 	}
 	

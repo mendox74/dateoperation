@@ -24,7 +24,7 @@ public class LoginPageTest {
 	
 	@Before
 	public void setup() {
-        open("http://localhost:8080/login");
+        open("http://localhost:8090/login");
 		
 	}
 
