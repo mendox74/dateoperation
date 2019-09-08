@@ -12,7 +12,7 @@ import org.openqa.selenium.By;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.WebDriverRunner;
 
-public class IndexPageTest {
+public class IndexPage {
 	
 	@BeforeClass
 	public static void beforeClass() {

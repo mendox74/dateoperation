@@ -11,7 +11,7 @@ import org.junit.Test;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.WebDriverRunner;
 
-public class LoginPageTest {
+public class LoginPage {
 	
 	@BeforeClass
 	public static void beforeClass() {
