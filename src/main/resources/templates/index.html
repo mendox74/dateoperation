@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8" />
     <title>日付計算 - DATE_Operation</title>
-    <link rel="stylesheet" href="/css/bootstrap.css" />
-    <script src="/js/jquery.js"></script>
-    <script src="/js/bootstrap.js"></script>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}" />
+    <script th:src="@{/js/jquery.js}"></script>
+    <script th:src="@{/js/bootstrap.js}"></script>
   </head>
   <body>
     <div class="container">
@@ -51,8 +51,8 @@
           </tr>
         </tbody>
       </table>
-      <a class="btn btn-default" href="/new">新規登録</a>
-      <a class="btn btn-default" href="/criteria">基準日設定</a>
+      <a class="btn btn-default" th:href="@{/new}">新規登録</a>
+      <a class="btn btn-default" th:href="@{/criteria}">基準日設定</a>
     </div>
   </body>
 </html>

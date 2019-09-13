@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8" />
     <title>ログイン - DATE_Operation</title>
-    <link rel="stylesheet" href="/css/bootstrap.css" />
-    <script src="/js/jquery.js"></script>
-    <script src="/js/bootstrap.js"></script>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}" />
+    <script th:src="@{/js/jquery.js}"></script>
+    <script th:src="@{/js/bootstrap.js}"></script>
   </head>
   <body>
      <div class="container">
@@ -21,7 +21,7 @@
           <input class="form-control" type="password" name="password" />
         <button class="btn btn-default" type="submit">ログイン</button>
       </form>
-       <a class="btn btn-default" href="/newUser">新規登録</a>
+       <a class="btn btn-default" th:href="@{/newUser}">新規登録</a>
      </div>
   </body>
 </html>
