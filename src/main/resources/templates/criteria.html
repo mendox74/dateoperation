@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8" />
     <title>日付計算基準設定 - DATE_Operation</title>
-    <link rel="stylesheet" href="/css/bootstrap.css" />
-    <script src="/js/jquery.js"></script>
-    <script src="/js/bootstrap.js"></script>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}" />
+    <script th:src="@{/js/jquery.js}"></script>
+    <script th:src="@{/js/bootstrap.js}"></script>
   </head>
   <body>
     <div class="container">
@@ -25,7 +25,7 @@
             <th>計算式ID</th>
             <th>計算式名称</th>
             <th>計算式(年/月/日)</th>
-            <th></th>
+            <th>月末日取得</th>
             <th></th>
           </tr>
         </thead>
@@ -35,11 +35,12 @@
             <td th:text="*{operationId}"></td>
             <td th:text="*{operationName}"></td>
             <td th:text="*{operationYear}+'/'+*{operationMonth}+'/'+*{operationDay}"></td>
+			<td th:text="*{monthEnd eq 1}?'有':'無'"></td>
             <td></td>
         </tbody>
       </table>
       <div class="pull-right">
-        <a class="btn btn-link" href="/">一覧画面へ</a>
+        <a class="btn btn-link" th:href="@{/}">一覧画面へ</a>
       </div>
     </div>
   </body>
